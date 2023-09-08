@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moreAboutStephen comment="test"
+	xmlns:tns="http://www.example.org/test"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/test more_about_stephen.xsd
+						"
+	xmlns="http://www.example.org/test">
+	<questions>
+		<question id="1">
+			<body>What are your favorite colors?</body>
+			<normalResponse earliestYear="1971" latestYear="2035">
+				<subResponse>red</subResponse>
+				<subResponse>green</subResponse>
+				<subResponse>blue</subResponse>
+			</normalResponse>
+		</question>
+		<question id="2">
+			<body>What are your favorite movies by genre?</body>
+			<subdividedResponse>
+				<subTopic title="scifi" earliestYear="1977"
+					latestYear="2003">
+					<subResponse>Star Wars, Episode 3</subResponse>
+					<subResponse>Star Ware, Episode 4</subResponse>
+					<subResponse>Serenity</subResponse>
+				</subTopic>
+				<subTopic title="drama" earliestYear="1989"
+					latestYear="2023">
+					<subResponse>Steel Magnolias</subResponse>
+					<subResponse>The English Patient</subResponse>
+					<subResponse>Otto</subResponse>
+				</subTopic>
+				<subTopic title="comedy" earliestYear="1986"
+					latestYear="2023">
+					<subResponse>Big</subResponse>
+					<subResponse>Four Weddings and a Funeral</subResponse>
+					<subResponse>Challengers</subResponse>
+				</subTopic>
+			</subdividedResponse>
+		</question>
+	</questions>
+</moreAboutStephen>

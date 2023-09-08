@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/test"
+	xmlns:tns="http://www.example.org/test" elementFormDefault="qualified">
+
+    <element name="moreAboutStephen" type="tns:rootType">
+    </element>
+
+    <complexType name="rootType">
+    	<sequence>
+    		<element name="questions" type="tns:questionsType"
+    			maxOccurs="1" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="comment" use="required" type="string"/>
+    </complexType>
+
+    <complexType name="questionsType">
+    	<sequence minOccurs="1" maxOccurs="unbounded">
+    		<element name="question" type="tns:questionType"></element>
+    	</sequence>
+    </complexType>
+
+	<complexType name="questionType">
+		<sequence>
+			<element name="body" type="string" />
+			<element name="normalResponse" type="tns:normalResponse"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="subdividedResponse"
+				type="tns:subdividedResponse" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="id" type="long" use="required"/>
+	</complexType>
+    
+    <complexType name="normalResponse">
+    	<sequence>
+    		<element name="subResponse" type="string" minOccurs="1"
+    			maxOccurs="unbounded" />
+    	</sequence>
+    	<attribute name="earliestYear" use="required" type="tns:yearType" />
+    	<attribute name="latestYear" use="required" type="tns:yearType" />
+    </complexType>
+
+    <complexType name="subdividedResponse">
+    	<sequence>
+    		<element name="subTopic" type="tns:subTopicType" maxOccurs="unbounded"/>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="subTopicType">
+    	<sequence>
+    		<element name="subResponse" type="string" minOccurs="1"
+    			maxOccurs="unbounded" />
+    	</sequence>
+    	<attribute name="title" type="string" />
+    	<attribute name="earliestYear" use="required" type="tns:yearType" />
+    	<attribute name="latestYear" use="required" type="tns:yearType" />
+     </complexType>
+
+	<simpleType name="yearType">
+		<restriction base="string">
+			<pattern value="\d{4}"></pattern>
+		</restriction>
+	</simpleType>
+
+</schema>
