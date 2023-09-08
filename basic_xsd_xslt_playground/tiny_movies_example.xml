@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <moreAboutStephen comment="test"
-	xmlns:tns="http://www.example.org/test"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.example.org/test more_about_stephen.xsd
-						"
+	xsi:schemaLocation="http://www.example.org/test more_about_stephen.xsd"
 	xmlns="http://www.example.org/test">
 	<questions>
 		<question id="1">

@@ -8,16 +8,15 @@
 
     <complexType name="rootType">
     	<sequence>
-    		<element name="questions" type="tns:questionsType"
-    			maxOccurs="1" minOccurs="1">
+    		<element name="questions" type="tns:questionsType">
     		</element>
     	</sequence>
     	<attribute name="comment" use="required" type="string"/>
     </complexType>
 
     <complexType name="questionsType">
-    	<sequence minOccurs="1" maxOccurs="unbounded">
-    		<element name="question" type="tns:questionType"></element>
+    	<sequence maxOccurs="unbounded">
+    		<element name="question" type="tns:questionType" />
     	</sequence>
     </complexType>
 
@@ -34,8 +33,8 @@
     
     <complexType name="normalResponse">
     	<sequence>
-    		<element name="subResponse" type="string" minOccurs="1"
-    			maxOccurs="unbounded" />
+    		<element name="subResponse" type="string"
+					 maxOccurs="unbounded" />
     	</sequence>
     	<attribute name="earliestYear" use="required" type="tns:yearType" />
     	<attribute name="latestYear" use="required" type="tns:yearType" />
@@ -49,8 +48,8 @@
     
     <complexType name="subTopicType">
     	<sequence>
-    		<element name="subResponse" type="string" minOccurs="1"
-    			maxOccurs="unbounded" />
+    		<element name="subResponse" type="string"
+					 maxOccurs="unbounded" />
     	</sequence>
     	<attribute name="title" type="string" />
     	<attribute name="earliestYear" use="required" type="tns:yearType" />
@@ -59,7 +58,7 @@
 
 	<simpleType name="yearType">
 		<restriction base="string">
-			<pattern value="\d{4}"></pattern>
+			<pattern value="\d{4}"/>
 		</restriction>
 	</simpleType>
 
